@@ -21,6 +21,7 @@ export const InputCheckbox: InputCheckboxComponent = ({ id, checked = false, dis
         type="checkbox"
         className="RampInputCheckbox--input"
         checked={checked}
+        readOnly
         disabled={disabled}
       />
     </div>
