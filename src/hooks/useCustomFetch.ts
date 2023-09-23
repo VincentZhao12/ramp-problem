@@ -25,7 +25,6 @@ export function useCustomFetch() {
 
         cache?.current.set(cacheKey, JSON.stringify(result))
 
-        console.log(result)
         return result
       }),
     [cache, wrappedRequest]

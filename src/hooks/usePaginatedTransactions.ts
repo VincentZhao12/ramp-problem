@@ -17,8 +17,6 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
       }
     )
 
-    console.log(response)
-
     setPaginatedTransactions((previousResponse) => {
       if (response === null || previousResponse === null) {
         return response
