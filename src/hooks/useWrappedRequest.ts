@@ -9,7 +9,6 @@ export function useWrappedRequest() {
     async <TData extends any = void>(promise: () => Promise<TData>): Promise<TData | null> => {
       try {
         setLoading(true)
-        console.log("loading is true")
         const result = await promise()
         return result
       } catch (error) {
@@ -17,7 +16,6 @@ export function useWrappedRequest() {
         return null
       } finally {
         setLoading(false)
-        console.log("loading is false")
       }
     },
     [setError]

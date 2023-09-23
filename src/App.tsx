@@ -14,12 +14,17 @@ export function App() {
   const { data: transactionsByEmployee, ...transactionsByEmployeeUtils } = useTransactionsByEmployee()
   const [employeeId, setEmployeeId] = useState<string>("")
 
+  useEffect(() => {
+    console.log("pag", paginatedTransactions?.data)
+  }, [paginatedTransactions?.data])
+
   const transactions = useMemo(
     () => paginatedTransactions?.data ?? transactionsByEmployee ?? null,
     [paginatedTransactions, transactionsByEmployee]
   )
 
   const loadAllTransactions = useCallback(async () => {
+    console.log(transactions)
     transactionsByEmployeeUtils.invalidateData()
 
     await employeeUtils.fetchAll()
